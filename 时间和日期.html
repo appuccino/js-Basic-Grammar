@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>时间和日期</title>
+	<script type="text/javascript">
+		// var time = new Date();//获取系统当前时间
+		// alert(time);
+
+		// var t1 = new Date(1000);//1000ms = 1s,1970.1.1 08：00:01
+		// alert(t1);
+
+		// var t2 = new Date("05/23/2010");//内部使用了Data.parse() (静态方法)
+		// //Data.parse("05/23/2010")-得到的是毫秒数
+		// alert(t2);
+
+		// var t3 = new Date("Jul 03,2002");
+		// alert(t3);
+
+		// var d1 = Date.parse("1/1/1970 08:00:00");
+		// alert(d1);
+
+		var d2 = Date.UTC(1970,0,32,0,0,0);//UTC()方法转换时间就不存在浏览器兼容问题了
+		//alert(d2);
+		var d3 = new Date(d2);
+		alert(d3);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

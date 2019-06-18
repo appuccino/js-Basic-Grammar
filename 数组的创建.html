@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数组的创建</title>
+	<script type="text/javascript">
+		//使用new创建数组
+		var arr = new Array(10);//定义了一个可以储存10个数据的数组
+		//alert(typeof arr);//object类型
+		arr[0] = 5;
+		arr[1] = 6;
+		//alert(arr[0]+","+arr[1]);
+
+		var arr1 = new Array();
+		arr1[6] = 77;
+		//alert(arr1);
+		//alert(arr1.length);
+
+		var arr2 = new Array("李四",45,true);//创建数组的同时给数组初始化数据，数组的初始长度就是数据的个数
+		//alert(arr2.length);
+		arr2[3] = 66;
+		//alert(arr2.length);
+		//总结：1.数组的长度是可以改变的 2.数组中可以存储不同类型的数据
+
+		//var a = Array(10);	var b = Array();	var c  =  Array["李四"，45，true];//对应以上三种数组的创建，new可以省略
+
+		//使用字面量方式创建数组
+		var arr3 = [];
+		arr3[0] = 66;
+		//alert(arr3[0]);
+
+		var arr4 = [5,7,8,9];
+		//alert(arr4[2]);
+
+		var arr5 = [
+			{
+				name:"李四",
+				age:23,
+				fun:function() {
+					alert("演员");
+				}
+			},
+				[3,4,5,new Object()],
+				"hello",
+				new Array("html","css","javascript")
+		];
+		//arr5[0].fun();
+		//alert(arr5[1]);
+		alert(arr5[3][0]);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

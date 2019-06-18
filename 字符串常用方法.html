@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>字符串常用方法</title>
+	<script type="text/javascript">
+		var ss = "abcd0123$%^*A";
+		//字符串中的每一个字符都有一个索引(相当于数组中的下标)，索引从0开始
+		//charAt(index):根据索引得到字符串的某一个字符
+		// alert(ss.charAt(0));
+		// alert(ss.charAt(ss.length-1));//得到字符串中的最后一个字符
+		// alert(ss.charAt(-1));//超出索引范围，返回值为空
+
+		//charCodeAt(index):返回索引对应的字符的编码
+		// alert(ss.charCodeAt(4));//48
+		// alert(ss.charCodeAt(ss.length-1));//65
+
+		//打印字符串中每个字符以及字符对应的编码
+		// var s = "abcdefg 01234567 ABCDEFGH 加油努力!";
+		// for(i=0;i<=s.length;i++)
+		// {
+		// 	document.write("下标为"+i+"的字符是"+s.charAt(i)+"-->对应的编码为"+s.charCodeAt(i)+"<br/>")
+		// }
+
+		// //String.fromCharCode():根据编码生成字符串
+		// alert(String.fromCharCode(97,65,32,33333));
+
+		var ss = "dhahahjfhkfahdgwhuihf";
+
+		//indexOf(str):默认返回字符串中第一次出现的索引
+		// var index = ss.indexOf("j");
+		// alert(index);
+		// //alert(ss.length);
+
+		// //indexOf(str,position):返回从position指定的位置开始在字符串中第一次出现的索引
+		// var index2 = ss.indexOf("f",ss.indexOf("i"));
+		// alert(index2);
+
+		//lastIndexOf(str):返回在字符串中最后一次出现的索引
+		// var index3 = ss.lastIndexOf("h");
+		// alert(index3);
+
+		// var index4 = ss.indexOf("zz");
+		// alert(index4);//当要查找的字符在原字符串中不存在时，返回值为-1
+
+		//验证邮箱是否合法
+		// var email = "fan151.5545627foxmail@.com";
+		// if(email.indexOf("@")>0){
+		// 	if(email.indexOf("@")==email.lastIndexOf("@")){
+		// 		if(email.indexOf("@")+1<email.indexOf(".",email.indexOf("@"))){
+		// 			alert("邮箱合法");
+		// 		}
+		// 		else
+		// 			alert("@与最后的.挨着或在其后，不合法");
+		// 	}
+		// 	else
+		// 		alert("存在多个@，不合法");
+		// }
+		// else
+		// 	alert("没有@，不合法");
+
+
+		// var s = "hello world 123 哈皮";
+		//字符串的截取
+		// var s1 = s.substr(6);
+		// alert(s1);
+
+		// //substr(index1,index2):第一个参数表示截取的起始索引，第二个参数表示截取的字符的个数
+		// var s2 =  s.substr(16,2);
+		// alert(s2);
+
+		//substring(index1,index2):第一个参数表示截取的起始索引，第二个表示截取的结束位置(不包括结束位置上的字符，到结束位置的前一位)
+		// var s3 = s.substring(12,15);
+		// alert(s3);
+
+		var s4 = "hello dd hello ee";
+		// alert(s4.match("hllo"));
+		//以数组的形式返回，数组中是s4中第一个和"hello"匹配的字符串，没有的话返回null
+
+		// alert(s4.search("dd"));//第一次出现该字符串的起始位置
+
+		// var s5 = s4.replace("hello","ok");//默认替换第一个，原有字符串不变
+		// alert(s5);
+		// alert(s4);
+
+		var s6 = "zhangsan,lisi,wangwu,zhaoliu";
+		var arr = s6.split(",");//切割
+		// alert(arr);
+
+		var s7 = "qyhgftijuklfvg";
+		// alert(s7.toUpperCase());//将字符串转换为大写
+
+		var s8 = "ASHDJKUB";
+		alert(s8.toLowerCase());
+	</script>
+</head>
+<body>
+
+</body>
+</html>

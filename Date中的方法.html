@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date中的方法</title>
+	<script type="text/javascript">
+		var d = new Date(Date.UTC(2019,5,17,3,13,0));//2019/6/17 11:13:00
+		//alert(d);
+		//1.通用方法:
+		// alert(d.toString());
+		// alert(d.toLocaleString());//以本地的方式显示时间
+		// alert(d.valueOf());//显示日期的毫秒数
+
+		//2.日期格式化方法:
+		//alert(d.toDateString());//只获取星期和年月日
+		// alert(d.toTimeString());//只获取时间时分秒
+		// alert(d.toLocaleDateString());//本地日期
+		// alert(d.toLocaleTimeString());//本地时间
+		// alert(d.toUTCString());//UTC时间
+
+		// alert(d.getFullYear());
+		// alert(d.getMonth()+1);//月份需要加1
+		// alert(d.getDate());
+		// alert(d.getHours());
+		// alert(d.getMinutes());
+		// alert(d.getSeconds());
+
+		// alert(d.getUTCFullYear());//get后面加UTC即可得到对应的UTC时间
+
+		// d.setFullYear(2020);
+		// alert(d.getFullYear());
+		// d.setMonth(8);
+		// alert(d.getMonth());
+
+		//alert(d.getTimezoneOffset());//返回本地时间和UTC时间相差的分钟数
+
+		//显示当前时间
+		var date = new Date();
+		alert(date);
+		alert(date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"+date.getHours()+"时"+date.getMinutes()+"分"+date.getSeconds()+"秒");
+	</script>
+</head>
+<body>
+
+</body>
+</html>
