@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>正则表达式常用示例</title>
+	<script type="text/javascript">
+		//1.验证手机号
+		var reg = /^1[3578]\d{9}$/;
+		var phone = "15272976330";
+		//alert(reg.test(phone));
+
+
+		//2.把手机号的中间4位显示成****
+		var reg2 = /(\d{3})\d{4}(\d{4})/;
+		//alert(phone.replace(reg2,'$1****$2'));
+
+
+
+		//3.验证是否为压缩文件
+		var reg3 = /\w+\.(zip|rar)/;
+		var file = "d_sfff.ZIP";
+		// alert(reg3.test(file));
+
+
+		//4.验证邮箱
+		var email = "1fan1515545627@foxmail.com";
+		var reg4 = /^[a-zA-Z]+[0-9_]+@[a-zA-Z0-9_]+\.[com]/;
+		alert(reg4.test(email));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

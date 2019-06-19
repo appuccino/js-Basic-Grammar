@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正则表达式，专门针对字符串的</title>
+	<script type="text/javascript">
+		var qq = "01wqqeqwe515545627";
+		// if(qq.length>=5 && qq.length<=15){
+		// 	if(qq.charCodeAt(0)!=48){
+		// 		if(!isNaN(qq)){
+		// 			alert("qq号合法");
+		// 		}
+		// 		else
+		// 			alert("含有非数字的字符,不合法");
+		// 	}
+		// 	else
+		// 		alert("开头为0，不合法");
+		// }
+		// else
+		// 	alert("长度不合法");
+
+		/*正则表达式主要用来验证客户端的输入数据，用户填写完表单单击按钮之后，表单就会被发送到服务器，在服务器端通常会用PHP、ASP、NET等服务器脚本对其进行进一步处理，因为客户端验证，可以节约大量的服务器端的系统资源，并且提供更好的用户体验*/
+		// var reg = /[1-9][0-9]{4,14}/;
+		// alert(reg.test(qq));//有问题
+
+
+		//正则表达式(regular expression)是一个描述字符模式的对象。ECMAScript使用RegExp表示正则表达式
+		//创建正则表达式有两种方法：一种是使用new运算符，另一种是使用字面量方式
+		//1.使用new运算符 RegExp(string,pattern) i:不区分大小写 g:全局匹配 m:多行匹配
+		// var reg1 = new RegExp("hello","ig");
+		//2.字面量方式
+		// var reg2 = /hello/ig;
+
+		//使用正则表达式进行验证的方式:test() exec()
+		//var reg = new RegExp("hello");
+		// var reg = /hello/i;
+		// var str = "Hello world";
+		// //alert(reg.test(str));//返回true  or  false
+		// alert(reg.exec(str));//返回的是数组对象，与之对应的字符串
+
+
+		//String的正则表达式
+		//1.match(pattern):返回pattern中的子串或null，返回数组，数组中含有匹配的字符串
+		var reg = /hello/i;//i g
+		var str = "Hello World,hello Kitty";
+		//lert(str.match(reg));//默认只返回第一个匹配的字符串
+
+		//2.search(pattern):返回字符串中pattern开始位置
+		// alert(str.search(reg));//返回的是第一个和正则表达式匹配的字符串的起始位置
+
+		//3.replace(pattern,replacement):用replacement替换pattern
+		// alert(str.replace(reg,"hehe"));//默认只替换第一个符合正则表达式的字符串
+
+		//4.split(pattern)返回字符串按指定pattern拆分的数组
+		alert(str.split(reg)/*.length*/);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
