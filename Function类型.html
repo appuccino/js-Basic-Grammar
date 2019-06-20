@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function类型</title>
+	<script type="text/javascript">
+		//函数内部属性：
+		//1.argument属性:指向一个类似数组但不是数组的对象，存储的是实际传递给函数的参数，而不局限于函数声明所定义的参数
+		// function show(a,b)
+		// {
+		// 	if(arguments.length==2)
+		// 		alert(a+" "+b);
+		// 	else if(arguments.length==3)
+		// 		alert(arguments[0]+arguments[2]);
+		// }
+		// show("hello","world","tract");
+
+		//2.length属性：函数定义时所指定参数的个数
+		//alert(show.length);//2(为a和b)
+
+		//arguments中的calllee属性:它表示对函数对象本身的引用
+		// function jiecheng(n)
+		// {
+		// 	if(n==1)
+		// 		return 1;
+		// 	else
+		// 		return n*arguments.callee(n-1);
+		// }
+		// alert(jiecheng(3));
+		
+
+		//局部变量和全局变量
+
+		// var b = 88;//全局变量:任何一个函数都可以使用
+		// function fun()
+		// {
+		// 	var a = 66;//局部变量:只能被所在函数使用
+		// 	var b = 99;//当局部变量和全局变量同名时，在该函数里面只使用局部变量
+		// 	alert(b);
+		// }
+		// fun();
+		// alert(b);
+
+
+
+		//this:是一个引用，指向函数被调用时的对象
+		// var name = "zhangsan";
+		// function show()
+		// {
+		// 	alert(this.name);
+		// }
+		// // show();
+		// var obj = {
+		// 	name:"lisi",
+		// 	show:function(){
+		// 		alert(this.name);//此时this指向obj
+		// 	}
+		// }
+		// obj.show();
+
+
+		//call() apply()是用来改变函数的对象的方法
+		//***.call(this,num1,num2)第一个参数是调用call函数的对象
+		function test()
+		{
+			this.fun="hello";
+		}
+		test();//此时this指向window
+		alert(window.fun);
+		var obj={};
+		test.call(obj);//此时this指向obj
+		alert(obj.fun);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
