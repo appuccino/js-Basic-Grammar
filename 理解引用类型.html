@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>理解引用类型</title>
+	<script type="text/javascript">
+		function test(arr,str)
+		{
+			arr[0]=5;
+			str=new String("hello");//函数的参数属于局部变量，作用域仅限于该函数
+		}
+		var arr1 = [1,2,3];
+		var str1 = new String("world");
+		test(arr1,str1);
+		// alert(arr1);//5,2,3
+		// alert(str1);//world
+		//js基础语法51集
+
+
+
+		//基本包装包装类型(Number,Boolean)
+		var boo = false;
+		// alert(boo.toString());
+		// alert(boo.toLocaleString());
+		// alert(boo.valueOf());
+
+		// alert(Number.MAX_VALUE);
+		// alert(Number.MIN_VALUE);
+
+		var num = 5074.34567;
+		// alert(num.toString());
+		// alert(num.toLocaleString());//5,047.346
+		// alert(num.valueOf());
+
+		//toFixed(num):num参数表示小数点后的位数，将数字保留小数点后指定位数并转为字符串
+		//alert(num.toFixed(2));//5074.35 会四舍五入
+
+		//toExponential(num):num参数表示小数点后的位数，返回以指数形式表示的字符串
+		//alert(num.toExponential(1));//5.1*10^3 = 5.1e+3
+
+		//toPrecision(num):num参数表示有效数字位数，如果省略了该参数，则调用toString()
+		alert(num.toPrecision(7));//5074.346  同样会四舍五入
+		alert(num.toPrecision(3));//5.07e+3   如果num参数不足以包含数字的整数部分，则采用指数计数法
+	</script>
+</head>
+<body>
+
+</body>
+</html>

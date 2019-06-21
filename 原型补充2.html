@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>原型</title>
+	<script type="text/javascript">
+		//构造函数+原型 模式
+		// function Student(name,age)//每个对象特有的数据使用构造函数
+		// {
+		// 	this.name = name;
+		// 	this.age = age;
+		// 	this.family = ['妈妈','爸爸'];
+		// }
+		// //所有对象共有的内容定义在原型对象中
+		// Student.prototype = {
+		// 	fun:function(){
+		// 		return this.name+this.age+this.family;
+		// 	}
+		// };
+		// var stu1 = new Student("张三",20);
+		// stu1.family.push("哥哥");
+		// alert(stu1.family);
+		// var stu2 = new Student("李四",23);
+		// alert(stu2.family);
+
+
+
+		//动态原型模式
+		// function Student(name,age)
+		// {
+		// 	this.name = name;
+		// 	this.age = age;
+		// 	this.family = ['妈妈','爸爸'];
+		
+		// 	if(typeof this.fun!='function'){
+		// 		alert("原型初始化开始");
+		// 		Student.prototype.fun = function(){
+		// 			return this.name+this.age+this.family;
+		// 		}
+		// 		alert("原型初始化结束");
+		// 	}
+		// }
+		// var stu1 = new Student("张三",20);
+		// alert(stu1.fun());
+		// var stu2 = new Student("李四",22);
+		// alert(stu2.fun());
+
+
+		//寄生构造函数：工厂模式+构造函数
+		function Student(name,age)//不建议使用工厂模式
+		{
+			var obj = new Object();
+			obj.name = name;
+			obj.age = age;
+			obj.fun = function(){
+				return this.name+this.age;
+			};
+			return obj;
+		}
+		var stu = new Student("李四",33);
+		//alert(stu.fun());
+
+
+		//稳妥构造函数：在一定安全的环境中，比如禁止使用this和new,这里的this是构造函数里不使用this,这里的new是在外部实例化构造函数时不使用new
+		function Person(name,age)
+		{
+			var obj = new Object();
+			obj.fun=function(){
+				return name+age;//直接使用参数的值
+			}
+			return obj;
+		}
+		var person = Person("张三",24);//不能使用new创建对象
+		// alert(person.fun());
+
+		alert(Array.prototype.sort);
+		alert(String.prototype.substr);
+		
+		//给js内部的引用类型的原型对象添加方法，但是不建议这样使用，因为容易发生命名冲突
+		String.prototype.mystr=function(){
+			return this+"天天向上"
+		}
+		var ss = "我们";
+		alert(ss.mystr());
+	</script>
+</head>
+<body>
+
+</body>
+</html>

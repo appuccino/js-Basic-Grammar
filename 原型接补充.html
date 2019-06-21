@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>原型</title>
+	<script type="text/javascript">
+		var obj ={
+			// constructor:Student,//强制创建Student对象时，使用的构造方法为Student。
+			country:"中国"
+		}//推荐使用这种添加原型对象的属性
+		function Student(name,age){
+			this.name = name;
+			this.age = age;
+			this.study=function(){
+				alert(this.name+","+this.age);
+			};
+		}
+		// Student.prototype = obj;//会覆盖掉Student原有的原型对象
+		Student.prototype.sex = "男";
+		/*在Student原有的原型对象中添加一个属性，使用的是原本的原型对象，不会造成覆盖。不建议使用，看起来比较分散*/
+		// alert(Student.prototype);//Object 说明Student默认自带原型对象
+		var stu1 = new Student("张三",25);
+		var stu2 = new Student("李四",22);
+		// alert(stu1.sex);
+		alert(stu1.constructor)//如果覆盖了后 此时__proto__指向的是obj的构造方法
+	</script>
+</head>
+<body>
+
+</body>
+</html>
